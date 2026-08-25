@@ -3,6 +3,7 @@
 import Link from "next/link";
 import css from "./Header.module.css";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Header() {
   const pathname = usePathname();
@@ -13,11 +14,17 @@ export default function Header() {
   ];
 
   return (
-    <header className={css.header}>
-      <Link href="/" className={css.logo}>
-        Travel<span className={css.accent}>Trucks</span>
+    <header className={`container ${css.header}`}>
+      <Link href="/" className={css.logo} aria-label="Travel Trucks">
+        <Image
+          src="/logo.svg"
+          alt="logo TravelTrucks"
+          width={136}
+          height={16}
+          priority
+        ></Image>
       </Link>
-      <nav>
+      <nav className={css.navigation}>
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
 
