@@ -1,5 +1,5 @@
 .header {
-  background: var(--inputs);
+  background-color: var(--inputs);
   position: sticky;
   top: 0;
   z-index: 50;
