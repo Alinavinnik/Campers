@@ -1,0 +1,13 @@
+.button {
+  padding: 16px 49px;
+  background-color: var(--grey-green);
+  border-radius: 200px;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: background-color var(--cubic-btn);
+  display: inline-block;
+}
+.button:hover,
+.button:focus {
+  background-color: var(--green-hover);
+}

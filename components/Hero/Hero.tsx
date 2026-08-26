@@ -1,5 +1,5 @@
-import Link from "next/link";
 import css from "./Hero.module.css";
+import ButtonCatalogLink from "../ButtonCatalogLink/ButtonCatalogLink";
 
 export default function Hero() {
   return (
@@ -10,9 +10,7 @@ export default function Hero() {
           <p className={css.description}>
             You can find everything you want in our catalog
           </p>
-          <Link href="/catalog" className={css.button}>
-            View Now
-          </Link>
+          <ButtonCatalogLink>View Now</ButtonCatalogLink>
         </div>
       </section>
     </>

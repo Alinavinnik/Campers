@@ -1,5 +1,5 @@
 import NotFound from "@/components/NotFound/NotFound";
 
-export default function CatalogPage() {
+export default function NotFoundPage() {
   return <NotFound />;
 }
