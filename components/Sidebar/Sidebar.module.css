@@ -7,3 +7,17 @@
   display: flex;
   flex-direction: column;
 }
+.filtersTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.filters {
+  margin-bottom: 48px;
+}
+.btn-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

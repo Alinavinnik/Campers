@@ -52,23 +52,26 @@ export default function Sidebar() {
       </div>
       <form className={css.filtersForm} onSubmit={handleSubmit}>
         <h2 className={css.filtersTitle}>Filters</h2>
-        {filterGroups.map((group) => {
-          return (
-            <FilterGroup
-              key={group.name}
-              title={group.title}
-              name={group.name}
-              options={group.options}
-              value={filters[group.name as keyof typeof filters]}
-              onChange={(value) => handleFilterChange(group.name, value)}
-            />
-          );
-        })}
-
-        <button type="submit" className={css.searchBtn}>
-          Search
-        </button>
-        <ClearFilterBtn onClick={HandleClick} />
+        <div className={css.filters}>
+          {filterGroups.map((group) => {
+            return (
+              <FilterGroup
+                key={group.name}
+                title={group.title}
+                name={group.name}
+                options={group.options}
+                value={filters[group.name as keyof typeof filters]}
+                onChange={(value) => handleFilterChange(group.name, value)}
+              />
+            );
+          })}
+        </div>
+        <div className={css["btn-wrap"]}>
+          <button type="submit" className={css.searchBtn}>
+            Search
+          </button>
+          <ClearFilterBtn onClick={HandleClick} />
+        </div>
       </form>
     </aside>
   );
