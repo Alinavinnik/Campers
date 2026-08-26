@@ -1,0 +1,10 @@
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 400;
+  border: none;
+}
+.group-name {
+  color: var(--gray);
+}

@@ -1,4 +1,9 @@
-.fieldset {
+.sidebar {
+  background-color: var(--inputs);
+  padding: 24px;
+  border-radius: 20px;
+}
+.locationField {
   display: flex;
   flex-direction: column;
 }

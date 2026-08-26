@@ -1,5 +1,12 @@
 import css from "./ClearFilterBtn.module.css";
 
-export default function ClearFilterBtn() {
-  return <button className={css.button}>Clear filters</button>;
+interface ClearFilterBtnProps {
+  onClick: () => void;
+}
+export default function ClearFilterBtn({ onClick }: ClearFilterBtnProps) {
+  return (
+    <button className={css.button} onClick={onClick}>
+      Clear filters
+    </button>
+  );
 }
