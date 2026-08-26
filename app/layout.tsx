@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   title: "Travel Tracks",
   description:
     "Find and rent the perfect camper van for your next adventure. Explore our catalog of fully equipped travel trucks, view features, and book your road trip today.",
+  icons: {
+    icon: {
+      url: "/favicon.png",
+      sizes: "48×48",
+    },
+  },
 };
 
 interface RootLayoutProps {
@@ -32,7 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
       <body>
         <Header />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

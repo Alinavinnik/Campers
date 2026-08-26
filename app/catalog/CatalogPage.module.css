@@ -1,0 +1,19 @@
+.catalogWrapper {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding-top: 48px;
+  padding-bottom: 52px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
