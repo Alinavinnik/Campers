@@ -1,3 +1,4 @@
+import Link from "next/link";
 import css from "./Hero.module.css";
 
 export default function Hero() {
@@ -8,6 +9,9 @@ export default function Hero() {
         <p className={css.description}>
           You can find everything you want in our catalog
         </p>
+        <Link href="/catalog" className={css.button}>
+          View Now
+        </Link>
       </div>
     </section>
   );
