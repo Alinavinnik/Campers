@@ -60,3 +60,8 @@ export type FetchCampersParams = {
   engine?: string;
   transmission?: string;
 };
+
+export type BookingRequestBody = {
+  name: string;
+  email: string;
+};

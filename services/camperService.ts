@@ -1,4 +1,4 @@
-import { FetchCamperResponse } from "@/types/camper";
+import { BookingRequestBody, FetchCamperResponse } from "@/types/camper";
 import axios from "axios";
 
 const apiClient = axios.create({
@@ -11,5 +11,16 @@ export async function fetchCampers() {
       perPage: 4,
     },
   });
+  return data;
+}
+
+export async function createBook(
+  camperId: string,
+  bookingData: BookingRequestBody,
+) {
+  const { data } = await apiClient.post(
+    `/campers/${camperId}/booking-request`,
+    bookingData,
+  );
   return data;
 }
