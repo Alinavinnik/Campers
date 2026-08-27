@@ -1,7 +1,7 @@
 "use client";
 
 import ClearFilterBtn from "../ClearFilterBtn/ClearFilterBtn";
-import { CiMap } from "react-icons/ci";
+// import { CiMap } from "react-icons/ci";
 import FilterGroup from "./FilterGroup/FilterGroup";
 import css from "./Sidebar.module.css";
 import { useState } from "react";
@@ -41,9 +41,6 @@ export default function Sidebar() {
     event.preventDefault();
     console.log("Зібрані дані для відправки:", filters);
   };
-  const HandleClick = () => {
-    setFilters(INITIAL_FILTERS);
-  };
   return (
     <aside className={css.sidebar} aria-label="Camper filters">
       <div className={css.locationField}>
@@ -70,7 +67,7 @@ export default function Sidebar() {
           <button type="submit" className={css.searchBtn}>
             Search
           </button>
-          <ClearFilterBtn onClick={HandleClick} />
+          <ClearFilterBtn />
         </div>
       </form>
     </aside>

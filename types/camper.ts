@@ -11,7 +11,13 @@ type Amenity =
   | "gas"
   | "water"
   | "tv";
-
+export interface GalleryItem {
+  id: string;
+  camperId: string;
+  thumb: string;
+  original: string;
+  order: number;
+}
 export interface Camper {
   id: string;
   name: string;
@@ -27,7 +33,22 @@ export interface Camper {
   consumption: string;
   transmission: Transmission;
   engine: Engine;
-  amenities: Amenity;
+  amenities: Amenity[];
   coverImage: string;
   totalReviews: number;
+  gallery?: GalleryItem[];
+}
+
+export interface FetchCamperResponse {
+  page: number;
+  perPage: number;
+  totalPages: number;
+  totalArticles: number;
+  camper: Camper[];
+}
+
+export interface FiltersResponse {
+  forms: Form;
+  transmissions: Transmission;
+  engines: Engine;
 }

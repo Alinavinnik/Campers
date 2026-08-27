@@ -10,7 +10,7 @@ export default function Hero() {
           <p className={css.description}>
             You can find everything you want in our catalog
           </p>
-          <ButtonCatalogLink>View Now</ButtonCatalogLink>
+          <ButtonCatalogLink href="/catalog">View Now</ButtonCatalogLink>
         </div>
       </section>
     </>

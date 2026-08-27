@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import ButtonCatalogLink from "../ButtonCatalogLink/ButtonCatalogLink";
 import ClearFilterBtn from "../ClearFilterBtn/ClearFilterBtn";
+
 export default function NotFound() {
   return (
     <section className={css["not-found-section"]}>
@@ -26,7 +27,9 @@ export default function NotFound() {
         </div>
         <div className={css["btn-container"]}>
           <ClearFilterBtn />
-          <ButtonCatalogLink>View all campers</ButtonCatalogLink>
+          <ButtonCatalogLink href="/calalog">
+            View all campers
+          </ButtonCatalogLink>
         </div>
       </div>
     </section>

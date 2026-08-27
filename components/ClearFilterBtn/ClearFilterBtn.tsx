@@ -1,12 +1,12 @@
 import css from "./ClearFilterBtn.module.css";
 import { IoCloseOutline } from "react-icons/io5";
 
-interface ClearFilterBtnProps {
-  onClick: () => void;
-}
-export default function ClearFilterBtn({ onClick }: ClearFilterBtnProps) {
+// interface ClearFilterBtnProps {
+
+// }
+export default function ClearFilterBtn() {
   return (
-    <button className={css.button} onClick={onClick}>
+    <button className={css.button}>
       <span className={css.icon}>
         <IoCloseOutline size={24} />
       </span>
