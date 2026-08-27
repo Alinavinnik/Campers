@@ -54,11 +54,12 @@ export interface FiltersResponse {
 }
 
 export type FetchCampersParams = {
-  page: number;
+  page?: number;
+  perPage?: number;
   location?: string;
-  form?: string;
-  engine?: string;
-  transmission?: string;
+  form?: Form;
+  engine?: Engine;
+  transmission?: Transmission;
 };
 
 export type BookingRequestBody = {

@@ -2,16 +2,16 @@ export const filterGroups = [
   {
     title: "Camper form",
     name: "form",
-    options: ["Alcove", "Panel Van", "Integrated", "Semi Integrated"],
+    options: ["alcove", "panel van", "integrated", "semi integrated"],
   },
   {
     title: "Engine",
     name: "engine",
-    options: ["Diesel", "Petrol", "Hybrid", "Electric"],
+    options: ["diesel", "petrol", "hybrid", "electric"],
   },
   {
     title: "Transmission",
     name: "transmission",
-    options: ["Automatic", "Manual"],
+    options: ["automatic", "manual"],
   },
 ];

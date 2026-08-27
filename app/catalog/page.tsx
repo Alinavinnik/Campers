@@ -5,8 +5,8 @@ import { fetchCampers } from "@/services/camperService";
 import ButtonLoadMore from "@/components/Buttons/ButtonLoadMore/ButtonLoadMore";
 
 export default async function CatalogPage() {
-  const { campers, total } = await fetchCampers();
-  console.log(total);
+  const { campers, totalPages, page } = await fetchCampers();
+
   return (
     <section>
       <h1 className={css.visuallyHidden}>Catalog</h1>

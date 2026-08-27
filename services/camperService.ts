@@ -1,16 +1,33 @@
-import { BookingRequestBody, FetchCamperResponse } from "@/types/camper";
+import {
+  BookingRequestBody,
+  FetchCamperResponse,
+  FetchCampersParams,
+} from "@/types/camper";
 import axios from "axios";
 
 const apiClient = axios.create({
   baseURL: "https://campers-api.goit.study",
 });
 
-export async function fetchCampers() {
+export async function fetchCampers({
+  page = 1,
+  perPage = 4,
+  location,
+  form,
+  engine,
+  transmission,
+}: FetchCampersParams) {
   const { data } = await apiClient.get<FetchCamperResponse>("/campers", {
     params: {
-      perPage: 4,
+      page,
+      perPage,
+      location,
+      form,
+      engine,
+      transmission,
     },
   });
+
   return data;
 }
 

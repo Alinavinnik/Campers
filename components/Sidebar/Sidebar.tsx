@@ -24,7 +24,7 @@ export default function Sidebar() {
       <form className={css.filtersForm} action={handleSubmit}>
         <div className={css.locationField}>
           <label htmlFor="location">Location</label>
-          <input id="location" type="text" placeholder="Kyiv" />
+          <input id="location" name="location" type="text" placeholder="Kyiv" />
         </div>
         <h2 className={css.filtersTitle}>Filters</h2>
         <div className={css.filters}>
