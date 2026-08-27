@@ -52,3 +52,11 @@ export interface FiltersResponse {
   transmissions: Transmission;
   engines: Engine;
 }
+
+export type FetchCampersParams = {
+  page: number;
+  location?: string;
+  form?: string;
+  engine?: string;
+  transmission?: string;
+};

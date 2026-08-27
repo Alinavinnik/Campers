@@ -6,6 +6,10 @@ const apiClient = axios.create({
 });
 
 export async function fetchCampers() {
-  const { data } = await apiClient.get<FetchCamperResponse>("/campers");
+  const { data } = await apiClient.get<FetchCamperResponse>("/campers", {
+    params: {
+      perPage: 4,
+    },
+  });
   return data;
 }
