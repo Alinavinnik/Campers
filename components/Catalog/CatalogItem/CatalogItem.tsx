@@ -27,6 +27,7 @@ export default function CatalogItem({ camper }: CamperCardProps) {
         href={`/catalog/${camper.id}`}
         target="_blank"
         rel="noopener noreferrer"
+        className={css.card}
       >
         <Image
           src={camper.coverImage}
@@ -35,24 +36,26 @@ export default function CatalogItem({ camper }: CamperCardProps) {
           height={240}
           className={css.img}
         ></Image>
-        <h2 className={css.title}>{camper.name}</h2>
-        <p className={css.price}>€{camper.price}</p>
-        <div className={css.rating}>
-          <MdStarRate />
-          {camper.rating}
-          <span>({camper.totalReviews} Reviews)</span>
+        <div className={css.info}>
+          <h2 className={css.title}>{camper.name}</h2>
+          <p className={css.price}>€{camper.price}</p>
+          <div className={css.rating}>
+            <MdStarRate />
+            {camper.rating}
+            <span>({camper.totalReviews} Reviews)</span>
+          </div>
+          <div className={css.location}>{camper.location}</div>
+          <p className={css.description}>{camper.description}</p>
+          <ul className={css.badges}>
+            {features.map((f) => (
+              <li key={f.key} className={css.badge}>
+                {f.icon}
+                {f.value}
+              </li>
+            ))}
+          </ul>
+          <span className="btn">Show more</span>
         </div>
-        <div className={css.location}>{camper.location}</div>
-        <p className={css.description}>{camper.description}</p>
-        <ul className={css.badges}>
-          {features.map((f) => (
-            <li key={f.key} className={css.badge}>
-              {f.icon}
-              {f.value}
-            </li>
-          ))}
-        </ul>
-        <span className="btn">Show more</span>
       </Link>
     </li>
   );

@@ -16,6 +16,8 @@
   align-items: center;
   justify-content: center;
   min-height: 500px;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .visuallyHidden {
