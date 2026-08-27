@@ -1,5 +1,5 @@
 import css from "./Hero.module.css";
-import ButtonCatalogLink from "../ButtonCatalogLink/ButtonCatalogLink";
+import ButtonCatalogLink from "../Buttons/ButtonCatalogLink/ButtonCatalogLink";
 
 export default function Hero() {
   return (

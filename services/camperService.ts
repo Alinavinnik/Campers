@@ -2,10 +2,10 @@ import { FetchCamperResponse } from "@/types/camper";
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "https://goit.study",
+  baseURL: "https://campers-api.goit.study",
 });
 
 export async function fetchCampers() {
-  const { data } = await apiClient.get<FetchCamperResponse>("/camper");
+  const { data } = await apiClient.get<FetchCamperResponse>("/campers");
   return data;
 }

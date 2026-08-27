@@ -1,8 +1,8 @@
 import css from "./NotFound.module.css";
 import Image from "next/image";
 
-import ButtonCatalogLink from "../ButtonCatalogLink/ButtonCatalogLink";
-import ClearFilterBtn from "../ClearFilterBtn/ClearFilterBtn";
+import ButtonCatalogLink from "../Buttons/ButtonCatalogLink/ButtonCatalogLink";
+import ClearFilterBtn from "../Buttons/ClearFilterBtn/ClearFilterBtn";
 
 export default function NotFound() {
   return (

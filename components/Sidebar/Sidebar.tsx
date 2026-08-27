@@ -1,6 +1,6 @@
 "use client";
 
-import ClearFilterBtn from "../ClearFilterBtn/ClearFilterBtn";
+import ClearFilterBtn from "../Buttons/ClearFilterBtn/ClearFilterBtn";
 // import { CiMap } from "react-icons/ci";
 import FilterGroup from "./FilterGroup/FilterGroup";
 import css from "./Sidebar.module.css";

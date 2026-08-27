@@ -42,9 +42,9 @@ export interface Camper {
 export interface FetchCamperResponse {
   page: number;
   perPage: number;
+  total: number;
   totalPages: number;
-  totalArticles: number;
-  camper: Camper[];
+  campers: Camper[];
 }
 
 export interface FiltersResponse {
