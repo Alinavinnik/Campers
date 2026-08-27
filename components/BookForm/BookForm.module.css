@@ -23,9 +23,7 @@
   color: var(--gray);
   margin-bottom: 24px;
 }
-.name {
-  margin-bottom: 14px;
-}
+
 .name,
 .email {
   padding: 18px;
@@ -42,4 +40,27 @@
   background-color: var(--grey-green);
   padding: 16px 0;
   border-radius: 200px;
+  transition: background-color var(--cubic-btn);
+}
+.button:hover {
+  background-color: var(--green-hover);
+}
+.error {
+  color: var(--button);
+}
+.inputWrapper {
+  position: relative;
+  margin-bottom: 14px;
+}
+.inputError {
+  border: 1px solid var(--button);
+  background-color: #ffdfdf;
+}
+.errorIcon {
+  position: absolute;
+  right: 18px;
+  top: 38%;
+  transform: translateY(-50%);
+  color: #e44848;
+  font-size: 20px;
 }
