@@ -1,3 +1,7 @@
+.info {
+  max-width: 650px;
+  width: 100%;
+}
 .top-block {
   margin-bottom: 16px;
 }
@@ -29,6 +33,7 @@
 
 .badges {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 .badge {

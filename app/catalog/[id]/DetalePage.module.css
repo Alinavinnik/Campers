@@ -1,5 +1,5 @@
 .camper {
-  padding-top: 64px;
+  padding: 64px 0;
 }
 .top-content {
   margin-bottom: 88px;
@@ -7,5 +7,5 @@
 
 .bottom-content {
   display: flex;
-  gap: 48px;
+  justify-content: space-between;
 }
