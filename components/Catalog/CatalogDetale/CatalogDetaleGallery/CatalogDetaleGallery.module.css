@@ -1,0 +1,11 @@
+.gallery {
+  max-width: 638px;
+  width: 100%;
+}
+.main-img {
+  margin-bottom: 27px;
+  border-radius: 17px;
+}
+.prew-img {
+  border-radius: 16px;
+}
