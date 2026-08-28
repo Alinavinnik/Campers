@@ -1,12 +1,12 @@
 import { Camper } from "@/types/camper";
-import css from "./CamperDetaleInfo.module.css";
+import css from "./CamperDetailInfo.module.css";
 import CamperHeaderInfo from "@/components/CamperHeaderInfo/CamperRatingInfo";
 
 interface CamperDetaleInfoProps {
   camper: Camper;
 }
 
-export default function CamperDetaleInfo({ camper }: CamperDetaleInfoProps) {
+export default function CamperDetailInfo({ camper }: CamperDetaleInfoProps) {
   const formatValue = (value: string) => {
     const formatted = value.replaceAll("_", " ");
 

@@ -1,13 +1,13 @@
-import css from "./CamperDetale.module.css";
+import css from "./CamperDetail.module.css";
 import { fetchCamperById } from "@/services/camperService";
-import CamperDetaleGallery from "../CamperDetaleGallery/CatalogDetaleGallery";
-import CamperDetaleInfo from "../CamperDetaleInfo/CamperDetaleInfo";
+import CamperDetaleGallery from "../CamperDetailGallery/CatalogDetailGallery";
+import CamperDetailInfo from "../CamperDetailInfo/CamperDetailInfo";
 
 type BookFormProps = {
   camperId: string;
 };
 
-export default async function CamperDetaleItem({ camperId }: BookFormProps) {
+export default async function CamperDetailItem({ camperId }: BookFormProps) {
   const data = await fetchCamperById(camperId);
 
   return (
@@ -16,7 +16,7 @@ export default async function CamperDetaleItem({ camperId }: BookFormProps) {
         {data?.gallery && (
           <CamperDetaleGallery gallery={data.gallery} camperName={data.name} />
         )}
-        {data && <CamperDetaleInfo camper={data} />}
+        {data && <CamperDetailInfo camper={data} />}
       </div>
     </section>
   );

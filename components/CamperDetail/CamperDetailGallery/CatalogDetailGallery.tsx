@@ -4,10 +4,10 @@ import Image from "next/image";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
-import css from "./CamperDetaleGallery.module.css";
+import css from "./CamperDetailGallery.module.css";
 import { Navigation } from "swiper/modules";
 
-interface CamperDetaleGalleryProps {
+interface CamperDetailGalleryProps {
   gallery: GalleryItem[];
   camperName: string;
 }
@@ -15,7 +15,7 @@ interface CamperDetaleGalleryProps {
 export default function CamperDetaleGallery({
   gallery,
   camperName,
-}: CamperDetaleGalleryProps) {
+}: CamperDetailGalleryProps) {
   return (
     <div className={css.gallery}>
       <Swiper

@@ -1,19 +1,19 @@
 import BookForm from "@/components/BookForm/BookForm";
-import CamperDetaleItem from "@/components/CamperDetale/CamperDetale/CamperDetaleItem";
-import css from "./DetalePage.module.css";
-import CamperReviews from "@/components/CamperDetale/CamperReviews/CamperReviews";
-interface DetalePageProps {
+import CamperDetailItem from "@/components/CamperDetail/CamperDetail/CamperDetailItem";
+import css from "./DetailPage.module.css";
+import CamperReviews from "@/components/CamperDetail/CamperReviews/CamperReviews";
+interface DetailPageProps {
   params: Promise<{ id: string }>;
 }
 
-export default async function DetalePage({ params }: DetalePageProps) {
+export default async function DetailPage({ params }: DetailPageProps) {
   const { id } = await params;
 
   return (
     <section className={css.camper}>
       <div className="container">
         <div className={css["top-content"]}>
-          <CamperDetaleItem camperId={id} />
+          <CamperDetailItem camperId={id} />
         </div>
         <div className={css["bottom-content"]}>
           <CamperReviews camperId={id} />
