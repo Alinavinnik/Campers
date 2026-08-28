@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚐 TravelTrucks
 
-## Getting Started
+TravelTrucks is a modern web application for browsing and booking
+campervans.
 
-First, run the development server:
+The application allows users to explore available campers, filter them
+by different characteristics, view detailed information and reviews, and
+submit a booking request.
+
+## 🔗 [Live Demo](https://campers-ten-eta.vercel.app/)
+
+## 📌 Features
+
+- Browse a catalog of available campervans
+- Filter campers by:
+  - Location
+  - Camper form
+  - Engine type
+  - Transmission type
+- Load more campers using pagination
+- View detailed information about each camper
+- Browse camper images in an interactive gallery
+- View camper characteristics and amenities
+- Read customer reviews and ratings
+- Submit a camper booking request
+- Form validation with user-friendly error messages
+- Clear selected filters
+- Responsive and user-friendly interface
+- Loading and error states
+
+## 🛠 Technologies
+
+The project was built using:
+
+- **Next.js**
+- **React**
+- **TypeScript**
+- **TanStack Query**
+- **Axios**
+- **Formik**
+- **Yup**
+- **Swiper**
+- **React Hot Toast**
+- **React Icons**
+- **CSS Modules**
+
+## 🌐 API
+
+The application uses the TravelTrucks API to retrieve camper
+information, filters, reviews, and other related data.
+
+API base URL:
+
+`https://campers-api.goit.study`
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm
+
+### Installation
+
+1.  Clone the repository:
+
+```bash
+git clone https://github.com/Alinavinnik/Campers.git
+```
+
+2.  Navigate to the project directory:
+
+```bash
+cd Campers
+```
+
+3.  Install dependencies:
+
+```bash
+npm install
+```
+
+4.  Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5.  Open your browser and go to:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📖 Usage
 
-## Learn More
+Open the catalog page to browse available campervans.
 
-To learn more about Next.js, take a look at the following resources:
+Use the filters to narrow the results by location, camper form, engine,
+or transmission.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Click **Search** to apply selected filters or **Clear filters** to reset
+them.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Use the **Load more** button to load additional campers.
 
-## Deploy on Vercel
+Click **Show more** on a camper card to open its details page, where you
+can:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- View the camper gallery
+- Check vehicle specifications and amenities
+- Read customer reviews
+- Submit a booking request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Project Structure
+
+```text
+Campers/
+├── app/                  # Next.js pages and layouts
+├── components/           # Reusable React components
+├── services/             # API requests
+├── types/                # TypeScript types and interfaces
+├── utils/                # Utility functions and validation schemas
+├── public/               # Static assets
+└── README.md
+```
+
+## 👩‍💻 Author
+
+**Alina Luzhniak**
+
+GitHub: [Alinavinnik](https://github.com/Alinavinnik)
+
+Repository: [Campers](https://github.com/Alinavinnik/Campers)
+
+## 📄 License
+
+This project was created for educational purposes.
