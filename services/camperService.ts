@@ -2,6 +2,7 @@ import {
   BookingRequestBody,
   FetchCamperResponse,
   FetchCampersParams,
+  FiltersResponse,
 } from "@/types/camper";
 import axios from "axios";
 
@@ -39,5 +40,11 @@ export async function createBook(
     `/campers/${camperId}/booking-request`,
     bookingData,
   );
+  return data;
+}
+
+export async function fetchFilters() {
+  const { data } = await apiClient.get<FiltersResponse>("/campers/filters");
+
   return data;
 }

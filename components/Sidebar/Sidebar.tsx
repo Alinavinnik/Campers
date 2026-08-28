@@ -1,20 +1,31 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import ClearFilterBtn from "../Buttons/ClearFilterBtn/ClearFilterBtn";
 // import { CiMap } from "react-icons/ci";
 import FilterGroup from "./FilterGroup/FilterGroup";
 import css from "./Sidebar.module.css";
 import { buildCatalogUrl } from "@/utils/handlers";
-import { filterGroups } from "@/utils/filterOptions";
+import { createFilterGroups } from "@/utils/filterOptions";
 import { useTransition } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { fetchFilters } from "@/services/camperService";
 
 export default function Sidebar() {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
+  const { data: filtersData } = useQuery({
+    queryKey: ["filters"],
+    queryFn: fetchFilters,
+  });
+
+  const filterGroups = filtersData ? createFilterGroups(filtersData) : [];
+  const searchParams = useSearchParams();
+
   const handleSubmit = (formData: FormData) => {
     const url = buildCatalogUrl(formData);
+
     startTransition(() => {
       router.push(url);
     });
@@ -24,20 +35,25 @@ export default function Sidebar() {
       <form className={css.filtersForm} action={handleSubmit}>
         <div className={css.locationField}>
           <label htmlFor="location">Location</label>
-          <input id="location" name="location" type="text" placeholder="Kyiv" />
+          <input
+            id="location"
+            name="location"
+            type="text"
+            placeholder="Kyiv"
+            defaultValue={searchParams.get("location") ?? ""}
+          />
         </div>
         <h2 className={css.filtersTitle}>Filters</h2>
         <div className={css.filters}>
-          {filterGroups.map((group) => {
-            return (
-              <FilterGroup
-                key={group.name}
-                title={group.title}
-                name={group.name}
-                options={group.options}
-              />
-            );
-          })}
+          {filterGroups.map((group) => (
+            <FilterGroup
+              key={group.name}
+              title={group.title}
+              name={group.name}
+              options={group.options}
+              selectedValue={searchParams.get(group.name) ?? undefined}
+            />
+          ))}
         </div>
         <div className={css["btn-wrap"]}>
           <button type="submit" className={css.searchBtn} disabled={isPending}>

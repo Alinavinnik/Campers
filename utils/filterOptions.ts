@@ -1,30 +1,36 @@
-export const filterGroups = [
-  {
-    title: "Camper form",
-    name: "form",
-    options: [
-      { label: "Alcove", value: "alcove" },
-      { label: "Panel Van", value: "panel_van" },
-      { label: "Integrated", value: "integrated" },
-      { label: "Semi Integrated", value: "semi_integrated" },
-    ],
-  },
-  {
-    title: "Engine",
-    name: "engine",
-    options: [
-      { label: "Diesel", value: "diesel" },
-      { label: "Petrol", value: "petrol" },
-      { label: "Hybrid", value: "hybrid" },
-      { label: "Electric", value: "electric" },
-    ],
-  },
-  {
-    title: "Transmission",
-    name: "transmission",
-    options: [
-      { label: "Automatic", value: "automatic" },
-      { label: "Manual", value: "manual" },
-    ],
-  },
-];
+import type { FiltersResponse } from "@/types/camper";
+
+const formatLabel = (value: string) => {
+  return value
+    .replaceAll("_", " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+};
+
+export function createFilterGroups(filtersData: FiltersResponse) {
+  return [
+    {
+      title: "Camper form",
+      name: "form",
+      options: filtersData.forms.map((value) => ({
+        label: formatLabel(value),
+        value,
+      })),
+    },
+    {
+      title: "Engine",
+      name: "engine",
+      options: filtersData.engines.map((value) => ({
+        label: formatLabel(value),
+        value,
+      })),
+    },
+    {
+      title: "Transmission",
+      name: "transmission",
+      options: filtersData.transmissions.map((value) => ({
+        label: formatLabel(value),
+        value,
+      })),
+    },
+  ];
+}

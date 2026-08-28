@@ -48,9 +48,9 @@ export interface FetchCamperResponse {
 }
 
 export interface FiltersResponse {
-  forms: Form;
-  transmissions: Transmission;
-  engines: Engine;
+  forms: Form[];
+  transmissions: Transmission[];
+  engines: Engine[];
 }
 
 export type FetchCampersParams = {

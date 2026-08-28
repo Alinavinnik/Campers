@@ -2,9 +2,10 @@
 import css from "./CatalogContent.module.css";
 import { fetchCampers } from "@/services/camperService";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import CatalogList from "../Catalog/CatalogList/CatalogList";
+import CatalogList from "../CatalogList/CatalogList";
 import { useSearchParams } from "next/navigation";
 import type { Form, Engine, Transmission } from "@/types/camper";
+import NotFound from "@/components/NotFound/NotFound";
 
 export default function CatalogContent() {
   const searchParams = useSearchParams();
@@ -37,10 +38,12 @@ export default function CatalogContent() {
     });
 
   const campers = data?.pages.flatMap((page) => page.campers) ?? [];
+  const isEmpty = !isLoading && campers.length === 0;
 
   return (
     <>
       {isLoading && <p>Loading...</p>}
+      {isEmpty ? <NotFound /> : <CatalogList campers={campers} />}
 
       <CatalogList campers={campers} />
 

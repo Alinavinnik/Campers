@@ -1,6 +1,6 @@
 import Sidebar from "@/components/Sidebar/Sidebar";
 import css from "./CatalogPage.module.css";
-import CatalogContent from "@/components/CatalogContent/CatalogContent";
+import CatalogContent from "@/components/Catalog/CatalogContent/CatalogContent";
 
 export default function CatalogPage() {
   return (
