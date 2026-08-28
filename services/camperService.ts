@@ -1,5 +1,6 @@
 import {
   BookingRequestBody,
+  Camper,
   FetchCamperResponse,
   FetchCampersParams,
   FiltersResponse,
@@ -46,5 +47,10 @@ export async function createBook(
 export async function fetchFilters() {
   const { data } = await apiClient.get<FiltersResponse>("/campers/filters");
 
+  return data;
+}
+
+export default async function fetchCamperById(camperId: string) {
+  const { data } = await apiClient.get<Camper>(`/campers/${camperId}`);
   return data;
 }

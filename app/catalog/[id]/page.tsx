@@ -1,10 +1,17 @@
 import BookForm from "@/components/BookForm/BookForm";
+import CatalogDetaleItem from "@/components/Catalog/CatalogDetale/CatalogDetaleItem";
+interface DetalePageProps {
+  params: Promise<{ camperId: string }>;
+}
 
-export default function DetalePage() {
+export default async function DetalePage({ params }: DetalePageProps) {
+  const { camperId } = await params;
+
   return (
     <section>
       <div className="container">
-        <BookForm />
+        <CatalogDetaleItem camperId={camperId} />
+        <BookForm camperId={camperId} />
       </div>
     </section>
   );
