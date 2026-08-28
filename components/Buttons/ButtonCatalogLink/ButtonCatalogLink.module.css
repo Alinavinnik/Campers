@@ -7,7 +7,7 @@
   transition: background-color var(--cubic-btn);
   display: inline-block;
 }
-.button:hover,
-.button:focus {
+.button:hover {
   background-color: var(--green-hover);
+  transform: scale(1.05);
 }

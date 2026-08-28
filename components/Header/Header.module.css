@@ -10,6 +10,13 @@
 
 .logo {
   padding: 28px 0;
+  transition:
+    transform 250ms ease,
+    opacity 250ms ease;
+}
+.logo:hover {
+  transform: scale(1.05);
+  opacity: 0.75;
 }
 
 .navigation {
@@ -19,8 +26,17 @@
 }
 .link {
   padding: 24px 0;
+  transition: color var(--cubic-btn);
+}
+
+.link:hover {
+  color: var(--text);
 }
 
 .active {
   color: var(--grey-green);
+  transition: color var(--cubic-btn);
+}
+.active:hover {
+  color: var(--green-hover);
 }
