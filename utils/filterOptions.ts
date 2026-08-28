@@ -1,4 +1,5 @@
-import type { FiltersResponse } from "@/types/camper";
+import type {} from "@/types/camper";
+import { FiltersResponse } from "@/types/filter";
 
 const formatLabel = (value: string) => {
   return value
