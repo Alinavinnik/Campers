@@ -1,0 +1,16 @@
+.second-row {
+  display: flex;
+  gap: 16px;
+  font-weight: 400;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.icon {
+  margin-right: 4px;
+}
+
+.location {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}

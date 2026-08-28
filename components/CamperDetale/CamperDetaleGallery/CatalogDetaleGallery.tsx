@@ -3,18 +3,18 @@ import Image from "next/image";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
-import css from "./CatalogDetaleGallery.module.css";
+import css from "./CamperDetaleGallery.module.css";
 import { Navigation } from "swiper/modules";
 
-interface CatalogDetaleGalleryProps {
+interface CamperDetaleGalleryProps {
   gallery: GalleryItem[];
   camperName: string;
 }
 
-export default function CatalogDetaleGallery({
+export default function CamperDetaleGallery({
   gallery,
   camperName,
-}: CatalogDetaleGalleryProps) {
+}: CamperDetaleGalleryProps) {
   return (
     <div className={css.gallery}>
       <Swiper

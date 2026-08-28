@@ -1,5 +1,6 @@
 import BookForm from "@/components/BookForm/BookForm";
-import CatalogDetaleItem from "@/components/Catalog/CatalogDetale/CatalogDetaleItem";
+import CamperDetaleItem from "@/components/CamperDetale/CamperDetale/CamperDetaleItem";
+import css from "./DetalePage.module.css";
 interface DetalePageProps {
   params: Promise<{ id: string }>;
 }
@@ -10,8 +11,10 @@ export default async function DetalePage({ params }: DetalePageProps) {
   return (
     <section>
       <div className="container">
-        <CatalogDetaleItem camperId={id} />
-        <BookForm camperId={id} />
+        <div className={css.content}>
+          <CamperDetaleItem camperId={id} />
+          <BookForm camperId={id} />
+        </div>
       </div>
     </section>
   );
