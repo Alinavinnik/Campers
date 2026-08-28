@@ -32,7 +32,7 @@ export default function Sidebar() {
   };
   return (
     <aside className={css.sidebar} aria-label="Camper filters">
-      <form className={css.filtersForm} action={handleSubmit}>
+      <form className={css.filtersForm} action={handleSubmit} id="filters-form">
         <div className={css.locationField}>
           <label className={css["location-lable"]} htmlFor="location">
             Location

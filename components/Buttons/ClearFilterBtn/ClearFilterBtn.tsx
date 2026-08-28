@@ -7,6 +7,9 @@ export default function ClearFilterBtn() {
   const router = useRouter();
 
   const handleClick = () => {
+    const form = document.getElementById("filters-form") as HTMLFormElement;
+
+    form?.reset();
     router.push("/catalog");
   };
   return (

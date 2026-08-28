@@ -56,8 +56,6 @@ export default function CatalogContent() {
         <p>{error instanceof Error ? error.message : "Somthing went wrong"}</p>
       )}
 
-      <CatalogList campers={campers} />
-
       {hasNextPage && (
         <button
           type="button"
