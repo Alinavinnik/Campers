@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Travel Tracks",
+  title: "TravelTrucks",
   description:
     "Find and rent the perfect camper van for your next adventure. Explore our catalog of fully equipped travel trucks, view features, and book your road trip today.",
   icons: {
@@ -21,6 +21,19 @@ export const metadata: Metadata = {
       url: "/favicon.png",
       sizes: "48×48",
     },
+  },
+  openGraph: {
+    title: "TravelTrucks",
+    description:
+      "Find and rent the perfect camper van for your next adventure.",
+    images: [
+      {
+        url: "/images/hero-bg.webp",
+        width: 1200,
+        height: 630,
+        alt: "TravelTrucks camper rental preview",
+      },
+    ],
   },
 };
 
