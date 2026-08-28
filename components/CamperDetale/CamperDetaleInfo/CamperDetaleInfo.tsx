@@ -24,8 +24,10 @@ export default function CamperDetaleInfo({ camper }: CamperDetaleInfoProps) {
   return (
     <div className={css.info}>
       <div className={`${css.block} ${css["top-block"]}`}>
-        <h1 className={`${css.bold} ${css.title}`}>{camper.name}</h1>
-        <CamperHeaderInfo camper={camper} />
+        <div className={css.wrap}>
+          <h1 className={`${css.bold} ${css.title}`}>{camper.name}</h1>
+          <CamperHeaderInfo camper={camper} />
+        </div>
         <p className={`${css.bold} ${css.price}`}>€{camper.price}</p>
         <p className={css.description}>{camper.description}</p>
       </div>

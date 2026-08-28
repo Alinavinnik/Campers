@@ -46,8 +46,8 @@ export default function CatalogItem({ camper }: CamperCardProps) {
             <h2 className={css.title}>{camper.name}</h2>
             <p className={css.price}>€{camper.price}</p>
           </div>
-          <p className={css.description}>{camper.description}</p>
           <CamperHeaderInfo camper={camper} />
+          <p className={css.description}>{camper.description}</p>
           <ul className={css.badges}>
             {features.map((f) => (
               <li key={f.key} className={css.badge}>

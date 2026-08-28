@@ -5,6 +5,9 @@
 .top-block {
   margin-bottom: 16px;
 }
+.wrap {
+  margin-bottom: 16px;
+}
 .block {
   padding: 24px;
   background-color: var(--inputs);

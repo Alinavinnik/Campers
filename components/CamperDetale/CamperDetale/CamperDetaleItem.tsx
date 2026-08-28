@@ -1,5 +1,3 @@
-"use client";
-import { useQuery } from "@tanstack/react-query";
 import css from "./CamperDetale.module.css";
 import { fetchCamperById } from "@/services/camperService";
 import CamperDetaleGallery from "../CamperDetaleGallery/CatalogDetaleGallery";
@@ -9,11 +7,8 @@ type BookFormProps = {
   camperId: string;
 };
 
-export default function CamperDetaleItem({ camperId }: BookFormProps) {
-  const { data } = useQuery({
-    queryKey: ["camper", camperId],
-    queryFn: () => fetchCamperById(camperId),
-  });
+export default async function CamperDetaleItem({ camperId }: BookFormProps) {
+  const data = await fetchCamperById(camperId);
 
   return (
     <section className={css.card}>
