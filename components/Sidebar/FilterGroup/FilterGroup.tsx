@@ -1,8 +1,12 @@
 import css from "./FilterGroup.module.css";
+type FilterOption = {
+  label: string;
+  value: string;
+};
 interface FilterGroupProps {
   title?: string;
   name: string;
-  options: string[];
+  options: FilterOption[];
 }
 
 export default function FilterGroup({
@@ -14,9 +18,9 @@ export default function FilterGroup({
     <fieldset className={css.fieldset}>
       <legend className={css["group-name"]}>{title}</legend>
       {options.map((option) => (
-        <label key={option}>
-          <input type="radio" name={name} value={option} />
-          {option}
+        <label key={option.value}>
+          <input type="radio" name={name} value={option.value} />
+          {option.label}
         </label>
       ))}
     </fieldset>

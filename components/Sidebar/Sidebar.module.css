@@ -33,3 +33,8 @@
 .searchBtn:focus {
   background-color: var(--green-hover);
 }
+
+.searchBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

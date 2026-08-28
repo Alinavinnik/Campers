@@ -1,7 +1,7 @@
-type Transmission = "automatic" | "manual";
-type Engine = "petrol" | "diesel" | "hybrid" | "electric";
-type Form = "alcove" | "panel van" | "integrated" | "semi integrated";
-type Amenity =
+export type Transmission = "automatic" | "manual";
+export type Engine = "petrol" | "diesel" | "hybrid" | "electric";
+export type Form = "alcove" | "panel van" | "integrated" | "semi integrated";
+export type Amenity =
   | "ac"
   | "bathroom"
   | "kitchen"
