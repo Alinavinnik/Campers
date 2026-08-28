@@ -1,1 +1,11 @@
+.camper {
+  padding-top: 64px;
+}
+.top-content {
+  margin-bottom: 88px;
+}
 
+.bottom-content {
+  display: flex;
+  gap: 48px;
+}

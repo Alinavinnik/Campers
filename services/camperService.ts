@@ -1,10 +1,11 @@
+import { BookingRequestBody } from "@/types/booking";
 import {
-  BookingRequestBody,
   Camper,
   FetchCamperResponse,
   FetchCampersParams,
-  FiltersResponse,
 } from "@/types/camper";
+import { FiltersResponse } from "@/types/filter";
+import { ReviewsResponse } from "@/types/review";
 import axios from "axios";
 
 const apiClient = axios.create({
@@ -50,7 +51,14 @@ export async function fetchFilters() {
   return data;
 }
 
-export default async function fetchCamperById(camperId: string) {
+export async function fetchCamperById(camperId: string) {
   const { data } = await apiClient.get<Camper>(`/campers/${camperId}`);
+  return data;
+}
+
+export async function fetchReviews(camperId: string) {
+  const { data } = await apiClient.get<ReviewsResponse>(
+    `/campers/${camperId}/reviews`,
+  );
   return data;
 }

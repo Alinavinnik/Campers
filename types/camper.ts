@@ -47,12 +47,6 @@ export interface FetchCamperResponse {
   campers: Camper[];
 }
 
-export interface FiltersResponse {
-  forms: Form[];
-  transmissions: Transmission[];
-  engines: Engine[];
-}
-
 export type FetchCampersParams = {
   page?: number;
   perPage?: number;
@@ -62,7 +56,4 @@ export type FetchCampersParams = {
   transmission?: Transmission;
 };
 
-export type BookingRequestBody = {
-  name: string;
-  email: string;
-};
+

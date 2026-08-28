@@ -1,7 +1,7 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import css from "./CamperDetale.module.css";
-import fetchCamperById from "@/services/camperService";
+import { fetchCamperById } from "@/services/camperService";
 import CamperDetaleGallery from "../CamperDetaleGallery/CatalogDetaleGallery";
 import CamperDetaleInfo from "../CamperDetaleInfo/CamperDetaleInfo";
 
