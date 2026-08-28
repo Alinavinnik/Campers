@@ -1,11 +1,51 @@
 .fieldset {
   display: flex;
   flex-direction: column;
+  align-items: start;
   gap: 8px;
   font-weight: 400;
   border: none;
   text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
 }
 .group-name {
   color: var(--gray);
+  margin-bottom: 8px;
+}
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.customRadio {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--gray);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radioInput:checked + .customRadio::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--text);
 }

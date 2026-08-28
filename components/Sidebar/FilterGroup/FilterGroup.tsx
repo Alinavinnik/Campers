@@ -23,14 +23,18 @@ export default function FilterGroup({
       <legend className={css["group-name"]}>{title}</legend>
 
       {options.map((option) => (
-        <label key={option.value}>
+        <label key={option.value} className={css.radioLabel}>
           <input
             type="radio"
             name={name}
             value={option.value}
             defaultChecked={selectedValue === option.value}
+            className={css.radioInput}
           />
-          {option.label}
+
+          <span className={css.customRadio}></span>
+
+          <span>{option.label}</span>
         </label>
       ))}
     </fieldset>
