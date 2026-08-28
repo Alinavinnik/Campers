@@ -3,18 +3,12 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   variable: "--font-inter",
   weight: ["400", "500", "600"],
   subsets: ["latin"],
-  display: "swap",
-});
-
-const manrope = Manrope({
-  subsets: ["latin", "cyrillic"],
-  weight: ["400", "500"],
-  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -36,11 +30,12 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <body>
         <TanStackProvider>
           <Header />
           <main>{children}</main>
+          <Toaster />
         </TanStackProvider>
       </body>
     </html>

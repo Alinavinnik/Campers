@@ -39,7 +39,7 @@ export async function createBook(
   bookingData: BookingRequestBody,
 ) {
   const { data } = await apiClient.post(
-    `/campers/${camperId}/booking-request`,
+    `/campers/${camperId}/booking-requests`,
     bookingData,
   );
   return data;

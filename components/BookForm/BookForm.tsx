@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { Field, FieldProps, Formik, FormikHelpers } from "formik";
+import { Field, FieldProps, Form, Formik, FormikHelpers } from "formik";
 import { PiWarningCircleLight } from "react-icons/pi";
 
 import css from "./BookForm.module.css";
@@ -49,7 +49,7 @@ export default function BookForm({ camperId }: BookFormProps) {
       validationSchema={bookingSchema}
       onSubmit={handleSubmit}
     >
-      <form className={css.form}>
+      <Form className={css.form}>
         <div className={css["form-header"]}>
           <h3 className={css.title}>Book your campervan now</h3>
           <p className={css.subtitle}>
@@ -108,7 +108,7 @@ export default function BookForm({ camperId }: BookFormProps) {
         <button type="submit" className={css.button} disabled={isPending}>
           {isPending ? "Sending..." : "Send"}
         </button>
-      </form>
+      </Form>
     </Formik>
   );
 }
