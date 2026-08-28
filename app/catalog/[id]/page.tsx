@@ -28,6 +28,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
   return (
     <section className={css.camper}>
       <div className="container">
+        <h1 className={css.visuallyHidden}>TravelTrucks Camper Catalog</h1>
         <div className={css["top-content"]}>
           <CamperDetailItem camperId={id} />
         </div>
