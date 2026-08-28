@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import ClearFilterBtn from "../Buttons/ClearFilterBtn/ClearFilterBtn";
-// import { CiMap } from "react-icons/ci";
+import { CiMap } from "react-icons/ci";
 import FilterGroup from "./FilterGroup/FilterGroup";
 import css from "./Sidebar.module.css";
 import { buildCatalogUrl } from "@/utils/handlers";
@@ -34,14 +34,20 @@ export default function Sidebar() {
     <aside className={css.sidebar} aria-label="Camper filters">
       <form className={css.filtersForm} action={handleSubmit}>
         <div className={css.locationField}>
-          <label htmlFor="location">Location</label>
-          <input
-            id="location"
-            name="location"
-            type="text"
-            placeholder="Kyiv"
-            defaultValue={searchParams.get("location") ?? ""}
-          />
+          <label className={css["location-lable"]} htmlFor="location">
+            Location
+          </label>
+          <div className={css.locationInput}>
+            <CiMap size={24} className={css.locationIcon} />
+            <input
+              className={css.location}
+              id="location"
+              name="location"
+              type="text"
+              placeholder="Kyiv"
+              defaultValue={searchParams.get("location") ?? ""}
+            />
+          </div>
         </div>
         <h2 className={css.filtersTitle}>Filters</h2>
         <div className={css.filters}>

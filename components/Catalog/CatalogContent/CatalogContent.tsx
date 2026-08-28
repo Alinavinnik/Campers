@@ -16,26 +16,33 @@ export default function CatalogContent() {
     transmission:
       (searchParams.get("transmission") as Transmission | null) ?? undefined,
   };
-  const { data, hasNextPage, fetchNextPage, isFetchingNextPage, isLoading } =
-    useInfiniteQuery({
-      queryKey: ["campers", filters],
+  const {
+    data,
+    hasNextPage,
+    fetchNextPage,
+    isFetchingNextPage,
+    isLoading,
+    isError,
+    error,
+  } = useInfiniteQuery({
+    queryKey: ["campers", filters],
 
-      initialPageParam: 1,
+    initialPageParam: 1,
 
-      queryFn: ({ pageParam }) =>
-        fetchCampers({
-          page: pageParam,
-          ...filters,
-        }),
+    queryFn: ({ pageParam }) =>
+      fetchCampers({
+        page: pageParam,
+        ...filters,
+      }),
 
-      getNextPageParam: (lastPage) => {
-        if (lastPage.page < lastPage.totalPages) {
-          return lastPage.page + 1;
-        }
+    getNextPageParam: (lastPage) => {
+      if (lastPage.page < lastPage.totalPages) {
+        return lastPage.page + 1;
+      }
 
-        return undefined;
-      },
-    });
+      return undefined;
+    },
+  });
 
   const campers = data?.pages.flatMap((page) => page.campers) ?? [];
   const isEmpty = !isLoading && campers.length === 0;
@@ -44,6 +51,10 @@ export default function CatalogContent() {
     <>
       {isLoading && <p>Loading...</p>}
       {isEmpty ? <NotFound /> : <CatalogList campers={campers} />}
+
+      {isError && (
+        <p>{error instanceof Error ? error.message : "Somthing went wrong"}</p>
+      )}
 
       <CatalogList campers={campers} />
 
