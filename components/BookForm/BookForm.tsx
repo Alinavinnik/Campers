@@ -3,7 +3,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Field, FieldProps, Form, Formik, FormikHelpers } from "formik";
-import { PiWarningCircleLight } from "react-icons/pi";
+import { PiWarningCircleBold } from "react-icons/pi";
 
 import css from "./BookForm.module.css";
 import { createBook } from "@/services/camperService";
@@ -49,7 +49,7 @@ export default function BookForm({ camperId }: BookFormProps) {
       validationSchema={bookingSchema}
       onSubmit={handleSubmit}
     >
-      <Form className={css.form}>
+      <Form className={css.form} noValidate>
         <div className={css["form-header"]}>
           <h3 className={css.title}>Book your campervan now</h3>
           <p className={css.subtitle}>
@@ -64,14 +64,17 @@ export default function BookForm({ camperId }: BookFormProps) {
                 <input
                   {...field}
                   type="text"
-                  placeholder="Name*"
+                  placeholder=" "
+                  id="name"
                   className={`${css.name} ${
                     meta.touched && meta.error ? css.inputError : ""
                   }`}
                 />
-
+                <label htmlFor="name" className={css.label}>
+                  Name*
+                </label>
                 {meta.touched && meta.error && (
-                  <PiWarningCircleLight className={css.errorIcon} />
+                  <PiWarningCircleBold className={css.errorIcon} />
                 )}
 
                 {meta.touched && meta.error && (
@@ -87,14 +90,18 @@ export default function BookForm({ camperId }: BookFormProps) {
                 <input
                   {...field}
                   type="email"
-                  placeholder="Email*"
+                  id="email"
+                  placeholder=" "
                   className={`${css.email} ${
                     meta.touched && meta.error ? css.inputError : ""
                   }`}
                 />
+                <label htmlFor="email" className={css.label}>
+                  Email*
+                </label>
 
                 {meta.touched && meta.error && (
-                  <PiWarningCircleLight className={css.errorIcon} />
+                  <PiWarningCircleBold className={css.errorIcon} />
                 )}
 
                 {meta.touched && meta.error && (
