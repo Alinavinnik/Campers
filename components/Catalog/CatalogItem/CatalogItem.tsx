@@ -7,6 +7,7 @@ import { FaCarAlt } from "react-icons/fa";
 import { TbAutomaticGearbox } from "react-icons/tb";
 import Link from "next/link";
 import CamperHeaderInfo from "@/components/CamperHeaderInfo/CamperRatingInfo";
+import ButtonCatalogLink from "@/components/Buttons/ButtonCatalogLink/ButtonCatalogLink";
 
 interface CamperCardProps {
   camper: Camper;
@@ -27,39 +28,34 @@ export default function CatalogItem({ camper }: CamperCardProps) {
     { key: "form", value: camper.form, icon: <FaCarAlt /> },
   ];
   return (
-    <li>
-      <Link
-        href={`/catalog/${camper.id}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={css.card}
-      >
-        <Image
-          src={camper.coverImage}
-          alt={camper.name}
-          width={219}
-          height={240}
-          className={css.img}
-        ></Image>
-        <div className={css.info}>
-          <div className={css["top-row"]}>
-            <h2 className={css.title}>{camper.name}</h2>
-            <p className={css.price}>€{camper.price}</p>
-          </div>
-          <CamperHeaderInfo camper={camper} />
-          <p className={css.description}>{camper.description}</p>
-          <ul className={css.badges}>
-            {features.map((f) => (
-              <li key={f.key} className={css.badge}>
-                <span className={css.iconWrapper}>{f.icon}</span>
-
-                {f.value}
-              </li>
-            ))}
-          </ul>
-          <span className={css.btn}>Show more</span>
+    <li className={css.card}>
+      <Image
+        src={camper.coverImage}
+        alt={camper.name}
+        width={219}
+        height={240}
+        className={css.img}
+      ></Image>
+      <div className={css.info}>
+        <div className={css["top-row"]}>
+          <h2 className={css.title}>{camper.name}</h2>
+          <p className={css.price}>€{camper.price}</p>
         </div>
-      </Link>
+        <CamperHeaderInfo camper={camper} />
+        <p className={css.description}>{camper.description}</p>
+        <ul className={css.badges}>
+          {features.map((f) => (
+            <li key={f.key} className={css.badge}>
+              <span className={css.iconWrapper}>{f.icon}</span>
+
+              {f.value}
+            </li>
+          ))}
+        </ul>
+        <ButtonCatalogLink href={`/catalog/${camper.id}`}>
+          Show more
+        </ButtonCatalogLink>
+      </div>
     </li>
   );
 }

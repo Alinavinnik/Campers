@@ -51,16 +51,3 @@
   display: inline-flex;
   align-items: center;
 }
-.btn {
-  display: inline-block;
-  padding: 16px 43px;
-  background-color: var(--grey-green);
-  border-radius: 200px;
-  color: var(--white);
-  transition: background-color var(--cubic-btn);
-  width: fit-content;
-  align-self: flex-start;
-}
-.btn:hover {
-  background-color: var(--green-hover);
-}

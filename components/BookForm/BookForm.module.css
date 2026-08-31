@@ -40,10 +40,13 @@
   background-color: var(--grey-green);
   padding: 16px 0;
   border-radius: 200px;
-  transition: background-color var(--cubic-btn);
+  transition:
+    background-color var(--cubic-btn),
+    transform var(--cubic-btn);
 }
 .button:hover {
   background-color: var(--green-hover);
+  transform: scale(1.05);
 }
 .error {
   color: var(--button);

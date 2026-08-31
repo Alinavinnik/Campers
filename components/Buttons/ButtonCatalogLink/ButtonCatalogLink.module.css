@@ -4,8 +4,11 @@
   border-radius: 200px;
   letter-spacing: -0.01em;
   color: var(--white);
-  transition: background-color var(--cubic-btn);
   display: inline-block;
+  width: fit-content;
+  transition:
+    background-color var(--cubic-btn),
+    transform var(--cubic-btn);
 }
 .button:hover {
   background-color: var(--green-hover);
