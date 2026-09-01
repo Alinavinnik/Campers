@@ -30,16 +30,24 @@
 .link {
   padding: 28px 0;
   transition: color var(--cubic-btn);
+
+  transition:
+    color var(--cubic-btn),
+    transform 250ms ease;
 }
 
 .link:hover {
   color: var(--text);
+  transform: scale(1.05);
 }
 
 .active {
   color: var(--grey-green);
-  transition: color var(--cubic-btn);
+  transition:
+    color var(--cubic-btn),
+    transform 250ms ease;
 }
 .active:hover {
   color: var(--green-hover);
+  transform: scale(1.05);
 }
