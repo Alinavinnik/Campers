@@ -1,10 +1,10 @@
 :root {
-  --background: #fff;
+  --background: #fdfcfc;
   --main: #101828;
   --text: #475467;
   --white: #fff;
-  --inputs: #f7f7f7;
-  --badges: #f2f4f7;
+  --inputs: #f9f5ef;
+  --badges: #eee9d4;
   --gray: #6c717b;
   --gray-light: #dadde1;
   --button: #e44848;
@@ -12,9 +12,9 @@
   --error: #ec383b;
   --error-light: #ffdfdf;
   --rating: #ffc531;
-  --grey-green: #829b91;
+  --grey-green: #eea159;
   --olive: #f0f1f1;
-  --green-hover: #6d7b75;
+  --green-hover: #f5bf6e;
   --cubic-btn: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

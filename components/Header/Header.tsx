@@ -17,10 +17,10 @@ export default function Header() {
     <header className={`container ${css.header}`}>
       <Link href="/" className={css.logo} aria-label="Travel Trucks">
         <Image
-          src="/logo.svg"
+          src="/logo.png"
           alt="logo TravelTrucks"
           width={136}
-          height={16}
+          height={34}
           priority
         ></Image>
       </Link>

@@ -6,11 +6,11 @@ export default function Hero() {
     <>
       <section className={css["hero-section"]}>
         <div className={`container ${css.hero}`}>
-          <h1 className={css.title}>Campers of your dreams</h1>
+          <h1 className={css.title}>Your journey starts here</h1>
           <p className={css.description}>
-            You can find everything you want in our catalog
+            Find the perfect camper for your next adventure.
           </p>
-          <ButtonCatalogLink href="/catalog">View Now</ButtonCatalogLink>
+          <ButtonCatalogLink href="/catalog">View Campers</ButtonCatalogLink>
         </div>
       </section>
     </>
