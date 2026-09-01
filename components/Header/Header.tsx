@@ -14,34 +14,36 @@ export default function Header() {
   ];
 
   return (
-    <header className={`container ${css.header}`}>
-      <Link href="/" className={css.logo} aria-label="Travel Trucks">
-        <Image
-          src="/logo.png"
-          alt="logo TravelTrucks"
-          width={200}
-          height={55}
-          priority
-        ></Image>
-      </Link>
-      <nav className={css.navigation}>
-        {navLinks.map((link) => {
-          const isActive =
-            link.href === "/"
-              ? pathname === "/"
-              : pathname.startsWith(link.href);
+    <header className={css.header}>
+      <div className={`container ${css.headerContainer}`}>
+        <Link href="/" className={css.logo} aria-label="Travel Trucks">
+          <Image
+            src="/logo.png"
+            alt="logo TravelTrucks"
+            width={200}
+            height={55}
+            priority
+          ></Image>
+        </Link>
+        <nav className={css.navigation}>
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
 
-          return (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`${css.link} ${isActive ? css.active : ""}`}
-            >
-              {link.name}
-            </Link>
-          );
-        })}
-      </nav>
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`${css.link} ${isActive ? css.active : ""}`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
     </header>
   );
 }
