@@ -19,8 +19,8 @@ export default function Header() {
         <Image
           src="/logo.png"
           alt="logo TravelTrucks"
-          width={136}
-          height={34}
+          width={200}
+          height={55}
           priority
         ></Image>
       </Link>
