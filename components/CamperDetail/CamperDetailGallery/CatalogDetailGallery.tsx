@@ -5,7 +5,9 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import css from "./CamperDetailGallery.module.css";
-import { Navigation } from "swiper/modules";
+import { Navigation, Thumbs } from "swiper/modules";
+import { useState } from "react";
+import type { Swiper as SwiperType } from "swiper";
 
 interface CamperDetailGalleryProps {
   gallery: GalleryItem[];
@@ -16,14 +18,17 @@ export default function CamperDetaleGallery({
   gallery,
   camperName,
 }: CamperDetailGalleryProps) {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+
   return (
     <div className={css.gallery}>
       <Swiper
         slidesPerView={1}
         spaceBetween={27}
         className={css["main-img"]}
-        modules={[Navigation]}
+        modules={[Navigation, Thumbs]}
         navigation
+        thumbs={{ swiper: thumbsSwiper }}
       >
         {gallery.map((img) => (
           <SwiperSlide key={img.id}>
@@ -36,7 +41,12 @@ export default function CamperDetaleGallery({
           </SwiperSlide>
         ))}
       </Swiper>
-      <Swiper slidesPerView={4} spaceBetween={32}>
+      <Swiper
+        slidesPerView={4}
+        spaceBetween={32}
+        onSwiper={setThumbsSwiper}
+        watchSlidesProgress
+      >
         {gallery.map((img) => {
           return (
             <SwiperSlide key={img.id}>

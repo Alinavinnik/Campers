@@ -14,3 +14,14 @@
 .main-img :global(.swiper-button-prev) {
   color: var(--grey-green);
 }
+.prew-img {
+  opacity: 0.5;
+  filter: blur(1px);
+  transition:
+    opacity 250ms ease,
+    filter 250ms ease;
+}
+:global(.swiper-slide-thumb-active) .prew-img {
+  opacity: 1;
+  filter: blur(0);
+}
