@@ -9,3 +9,8 @@
 .prew-img {
   border-radius: 16px;
 }
+
+.main-img :global(.swiper-button-next),
+.main-img :global(.swiper-button-prev) {
+  color: var(--grey-green);
+}
