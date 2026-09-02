@@ -29,11 +29,9 @@ export default function Header() {
 
   const HandleClick = () => {
     if (theme === "light") {
-      document.documentElement.setAttribute("data-theme", "dark");
       setTheme("dark");
       localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.setAttribute("data-theme", "light");
       setTheme("light");
       localStorage.setItem("theme", "light");
     }
