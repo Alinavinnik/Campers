@@ -27,7 +27,7 @@ export default function Header() {
     { name: "Catalog", href: "/catalog" },
   ];
 
-  const HandleClick = () => {
+  const handleClick = () => {
     if (theme === "light") {
       setTheme("dark");
       localStorage.setItem("theme", "dark");
@@ -66,7 +66,7 @@ export default function Header() {
             );
           })}
         </nav>
-        <button type="button" onClick={HandleClick} className={css.icons}>
+        <button type="button" onClick={handleClick} className={css.icons}>
           {theme === "light" ? (
             <IoPartlySunnySharp size={24} className={css.cloud} />
           ) : (
