@@ -5,7 +5,6 @@ import { Camper } from "@/types/camper";
 import { MdLocalGasStation } from "react-icons/md";
 import { FaCarAlt } from "react-icons/fa";
 import { TbAutomaticGearbox } from "react-icons/tb";
-import Link from "next/link";
 import CamperHeaderInfo from "@/components/CamperHeaderInfo/CamperRatingInfo";
 import ButtonCatalogLink from "@/components/Buttons/ButtonCatalogLink/ButtonCatalogLink";
 
