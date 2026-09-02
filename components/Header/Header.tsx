@@ -6,11 +6,22 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { GoSun } from "react-icons/go";
 import { IoPartlySunnySharp } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") || "light";
+    }
+
+    return "light";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Catalog", href: "/catalog" },
@@ -20,9 +31,11 @@ export default function Header() {
     if (theme === "light") {
       document.documentElement.setAttribute("data-theme", "dark");
       setTheme("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.setAttribute("data-theme", "light");
       setTheme("light");
+      localStorage.setItem("theme", "light");
     }
   };
   return (
