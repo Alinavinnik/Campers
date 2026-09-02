@@ -42,7 +42,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${inter.variable}`} data-theme="light">
       <body>
         <TanStackProvider>
           <Header />

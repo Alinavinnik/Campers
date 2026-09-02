@@ -18,15 +18,19 @@
   --cubic-btn: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --main: #ededed;
-    --text: #9aa4b2;
-    --inputs: #1f1f1f;
-    --badges: #1a1a1a;
-    --white: #121212;
-  }
+:root[data-theme="dark"] {
+  --background: #0f1720;
+  --main: #f1f5f9;
+  --text: #a9b7c6;
+  --icon-hover: #fff;
+  --white: #17212b;
+  --inputs: #1b2733;
+  --badges: #243444;
+
+  --gray: #8b9bad;
+  --gray-light: #3b4b5c;
+
+  --olive: #202e3b;
 }
 
 html {
