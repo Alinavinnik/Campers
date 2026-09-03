@@ -6,21 +6,9 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { GoSun } from "react-icons/go";
 import { IoPartlySunnySharp } from "react-icons/io5";
-import { useEffect, useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") || "light";
-    }
-
-    return "light";
-  });
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -28,13 +16,12 @@ export default function Header() {
   ];
 
   const handleClick = () => {
-    if (theme === "light") {
-      setTheme("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      setTheme("light");
-      localStorage.setItem("theme", "light");
-    }
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
   };
   return (
     <header className={css.header}>
@@ -67,11 +54,8 @@ export default function Header() {
           })}
         </nav>
         <button type="button" onClick={handleClick} className={css.icons}>
-          {theme === "light" ? (
-            <IoPartlySunnySharp size={24} className={css.cloud} />
-          ) : (
-            <GoSun size={24} className={css.sun} />
-          )}
+          <IoPartlySunnySharp size={24} className={css.cloud} />
+          <GoSun size={24} className={css.sun} />
         </button>
       </div>
     </header>

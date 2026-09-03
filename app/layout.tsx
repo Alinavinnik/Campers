@@ -43,6 +43,16 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${inter.variable}`} data-theme="light">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              const savedTheme = localStorage.getItem("theme") || "light";
+              document.documentElement.setAttribute("data-theme", savedTheme);
+            `,
+          }}
+        />
+      </head>
       <body>
         <TanStackProvider>
           <Header />

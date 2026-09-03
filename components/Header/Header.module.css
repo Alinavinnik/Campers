@@ -57,6 +57,7 @@
   margin-right: 15px;
 }
 .sun {
+  display: none;
   background-color: var(--inputs);
   color: var(--main);
   transition:
@@ -71,8 +72,16 @@
   transition:
     transform 250ms ease,
     color var(--cubic-btn);
+  display: block;
 }
 .cloud:hover {
   transform: scale(1.1);
   color: black;
+}
+:global([data-theme="dark"]) .sun {
+  display: block;
+}
+
+:global([data-theme="dark"]) .cloud {
+  display: none;
 }
