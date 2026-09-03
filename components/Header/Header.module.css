@@ -68,7 +68,6 @@
   color: var(--icon-hover);
 }
 .cloud {
-  background-color: var(--inputs);
   transition:
     transform 250ms ease,
     color var(--cubic-btn);
